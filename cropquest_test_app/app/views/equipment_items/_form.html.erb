@@ -1,0 +1,15 @@
+<%= simple_form_for(@equipment_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :serial %>
+    <%= f.input :purchase_date %>
+    <%= f.input :comments %>
+    <%= f.input :equipment_type_id, collection: ["Tractor", "Hand tools", "Power tools", "Trucks", "Misc."] %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

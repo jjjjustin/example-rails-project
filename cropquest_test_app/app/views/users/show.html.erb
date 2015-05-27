@@ -1,0 +1,60 @@
+<h1 style="text-align: center"> My Profile</h1>
+<hr>
+<div class="background-image">
+  <div class="row bg-pixel">
+    <div class="col-sm-6 col-md-4 profile" >
+        <div class="caption">
+          <h2 class="text-center"><%= current_user.first_name %>  <%= current_user.last_name %></h2>
+          <h4 class="text-center"><%= current_user.city  %></h4>
+          <h4 class="text-center"><%= current_user.address %></h4>
+          <div class="btn-group btn-group-justified" role="group" aria-label="...">
+
+            <div class="btn-group" role="group">
+              <button type="button" class="btn"><%= link_to "Edit profile", edit_user_path(current_user) %></button>
+            </div>
+
+            <div class="btn-group" role="group">
+              <button type="button" class="btn"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+            </div>
+
+            <div class="btn-group" role="group">
+              <button type="button" class="btn"><%= link_to "Add equipment", new_equipment_item_path %></button>
+            </div>
+
+          </div>
+
+
+      </div>
+    </div>
+    <div class="col-md"></div>
+    <div class="col-md-6">
+      <h1 class="pad text-center"><%= @user.first_name.capitalize %>'s Equipment Items</h1>
+
+              <% @equipment_item.each do |t| %>
+                <div class="grey text-center tall">
+                  <div class="thumbnail thumbnail-big">
+                    <tr>
+                      <td>  NAME  <%= t.name %> </td><br>
+                      <td>  SERIAL NUMBER  <%= t.serial %></td><br>
+                      <td>  PURCHASE DATE  <%= t.purchase_date %></td><br>
+                      <td>  EQUIPMENT TYPE  <%= t.equipment_type_id %></td><br>
+                    </tr>
+                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn  "><%= link_to "Edit", edit_equipment_item_path() %></button>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn"><%=link_to "Delete", method: :delete %></button>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn"><%= link_to "Add new equipment", new_equipment_item_path(current_user) %></button>
+                      </div
+                  </div>
+                </div>
+                </br>
+              <% end %>
+
+
+
+
+

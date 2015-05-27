@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root  'static#landing'
+
+  devise_for :users
+  resources :equipment_items
+
+  resources :equipment_types
+
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
