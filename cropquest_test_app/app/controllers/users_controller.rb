@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @equipment_item = EquipmentItem.where(:user_id => current_user.id)
+    @equip_item = EquipmentItem.where(:user_id => current_user.id)
+    @user = current_user
   end
 
   # GET /users/new

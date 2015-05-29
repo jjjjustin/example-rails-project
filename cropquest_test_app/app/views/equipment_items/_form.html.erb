@@ -6,10 +6,15 @@
     <%= f.input :serial %>
     <%= f.input :purchase_date %>
     <%= f.input :comments %>
-    <%= f.input :equipment_type_id, collection: ["Tractor", "Hand tools", "Power tools", "Trucks", "Misc."] %>
+    <%= f.select :equipment_type_id, [['Tractor', 1],
+                                      ['Hand tools', 2],
+                                      ['Power tools', 3],
+                                      ['Trucks', 4],
+                                      ['Misc.', 5]] %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
